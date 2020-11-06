@@ -1,4 +1,10 @@
 import pygame
+Pol = []
+KolT = int(input(" Выедите количество точек в полигоне:"))
+for i in range(KolT):
+    m = input().split()
+    n = list(map(int, m))
+    Pol.append(n)
 
 pygame.init()
 win = pygame.display.set_mode((1000, 1000))
@@ -58,6 +64,9 @@ while run:
     pygame.draw.ellipse(win, (189, 23, 43), (x[0], y[0], wight[0], height[0]))
     pygame.draw.rect(win, (111, 78, 54), (x[1], y[1], wight[1], height[1]))
     pygame.draw.polygon(win, (185, 28, 71), [[height[2]+x[2], 0+y[2]], [0+x[2], 0+y[2]], [(height[2]/2)+x[2], wight[2] + y[2]]])
+    pygame.draw.polygon(win, (141, 2, 200), Pol)
+
     pygame.display.update()
 
 pygame.quit()
+
